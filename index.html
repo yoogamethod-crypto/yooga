@@ -1,58 +1,259 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorteio</title>
+    <title>Universo Aleatório</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00ffea;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
             text-align: center;
-            padding: 50px;
-            background-color: #f0f0f0;
+            animation: fadeIn 2s ease forwards;
         }
-        input, textarea, button {
-            padding: 10px;
-            margin: 10px 0;
-            width: 300px;
-            font-size: 16px;
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: slideIn 1.5s ease forwards;
         }
-        button {
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            background: #00ffea;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
             cursor: pointer;
+            transition: 0.3s;
         }
-        #resultado {
-            font-size: 24px;
-            color: green;
-            margin-top: 20px;
+
+        .btn:hover {
+            background: #00c4b3;
         }
+
+        section {
+            padding: 5rem 3rem;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, #ff0099, #493240, #00ffea);
+            top: -50%;
+            left: -50%;
+            filter: blur(30px);
+            opacity: 0;
+            transition: 0.5s;
+            z-index: 0;
+        }
+
+        .card:hover::before {
+            opacity: 0.6;
+        }
+
+        .card h3 {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideIn {
+            from {transform: translateY(-50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+
+        /* efeito de fundo animado */
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {opacity: 0.2;}
+            50% {opacity: 1;}
+        }
+
     </style>
 </head>
 <body>
-    <h1>Sorteio</h1>
-    <p>Digite os nomes separados por vírgula:</p>
-    <textarea id="nomes" rows="5" placeholder="Ex: João, Maria, Pedro"></textarea><br>
-    <button onclick="sortear()">Sortear</button>
+    <div class="stars"></div>
+    <header>
+        <h1>Universo Aleatório</h1>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
 
-    <div id="resultado"></div>
+    <div class="hero">
+        <h2>Bem-vindo ao Universo Aleatório</h2>
+        <p>Um espaço onde a criatividade encontra o código, e cada pixel conta uma história diferente. Explore e descubra experiências inesperadas!</p>
+        <button class="btn" onclick="alert('Você clicou no botão!')">Explorar</button>
+    </div>
+
+    <section id="sobre">
+        <h2>Sobre</h2>
+        <p>Este site é um exemplo de estrutura moderna, responsiva e interativa. Com animações suaves e elementos que respondem ao usuário, você tem um vislumbre do que é possível fazer apenas com HTML, CSS e JavaScript.</p>
+    </section>
+
+    <section id="projetos">
+        <h2>Projetos</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Projeto 1</h3>
+                <p>Uma experiência visual imersiva com efeitos de luz e movimento.</p>
+            </div>
+            <div class="card">
+                <h3>Projeto 2</h3>
+                <p>Interface interativa que responde ao toque e ao clique do usuário.</p>
+            </div>
+            <div class="card">
+                <h3>Projeto 3</h3>
+                <p>Combinação de cores e tipografia que cria um impacto visual único.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Envie uma mensagem ou apenas diga olá! A criatividade flui melhor com boas conexões.</p>
+        <form onsubmit="eventoForm(event)">
+            <input type="text" placeholder="Seu nome" required style="padding:0.5rem; margin-bottom:0.5rem; width:100%; border-radius:5px; border:none;">
+            <input type="email" placeholder="Seu email" required style="padding:0.5rem; margin-bottom:0.5rem; width:100%; border-radius:5px; border:none;">
+            <textarea placeholder="Mensagem" required style="padding:0.5rem; margin-bottom:0.5rem; width:100%; height:100px; border-radius:5px; border:none;"></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 Universo Aleatório. Todos os direitos reservados.
+    </footer>
 
     <script>
-        function sortear() {
-            const input = document.getElementById('nomes').value;
-            if (!input.trim()) {
-                alert('Digite pelo menos um nome!');
-                return;
-            }
+        function eventoForm(e) {
+            e.preventDefault();
+            alert('Mensagem enviada! Obrigado.');
+        }
 
-            const nomes = input.split(',').map(nome => nome.trim()).filter(nome => nome !== "");
-            if (nomes.length === 0) {
-                alert('Nenhum nome válido encontrado!');
-                return;
-            }
-
-            const indice = Math.floor(Math.random() * nomes.length);
-            const vencedor = nomes[indice];
-
-            document.getElementById('resultado').innerText = '🎉 Vencedor: ' + vencedor + ' 🎉';
+        // Criar estrelas aleatórias
+        const starsContainer = document.querySelector('.stars');
+        for(let i=0;i<100;i++){
+            let star = document.createElement('div');
+            star.classList.add('star');
+            let size = Math.random()*3 + 1;
+            star.style.width = size+'px';
+            star.style.height = size+'px';
+            star.style.top = Math.random()*100+'%';
+            star.style.left = Math.random()*100+'%';
+            star.style.animationDuration = Math.random()*3 + 2 + 's';
+            starsContainer.appendChild(star);
         }
     </script>
 </body>
