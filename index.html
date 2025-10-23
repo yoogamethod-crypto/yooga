@@ -33,14 +33,15 @@
 
         header h1 {
             font-family: 'Press Start 2P', cursive;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             letter-spacing: 2px;
         }
 
         nav a {
             color: #ffffff;
             text-decoration: none;
-            margin-left: 1.5rem;
+            margin-left: 2rem;
+            font-weight: bold;
             transition: 0.3s;
         }
 
@@ -55,6 +56,7 @@
             align-items: center;
             height: 90vh;
             text-align: center;
+            padding: 0 2rem;
             animation: fadeIn 2s ease forwards;
         }
 
@@ -65,14 +67,14 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            line-height: 1.6;
+            font-size: 1.3rem;
+            max-width: 700px;
+            line-height: 1.8;
             margin-bottom: 2rem;
         }
 
         .btn {
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 2.5rem;
             background: #00ffea;
             color: #000;
             font-weight: bold;
@@ -87,13 +89,40 @@
         }
 
         section {
-            padding: 5rem 3rem;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 60px;
+            background: #00ffea;
+            margin: 0.5rem auto 0;
+            border-radius: 3px;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
         }
 
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            justify-items: center;
+            margin-top: 2rem;
         }
 
         .card {
@@ -103,6 +132,8 @@
             transition: 0.4s;
             position: relative;
             overflow: hidden;
+            width: 100%;
+            max-width: 300px;
         }
 
         .card:hover {
@@ -156,7 +187,6 @@
             to {transform: translateY(0); opacity: 1;}
         }
 
-        /* efeito de fundo animado */
         .stars {
             position: fixed;
             width: 100%;
@@ -257,7 +287,7 @@
 
     <div class="hero">
         <h2>Bem-vindo ao Divulgue Aqui</h2>
-        <p>Um espaço onde a criatividade encontra o código, e cada pixel conta uma história diferente. Explore e descubra experiências inesperadas!</p>
+        <p>Um espaço onde você pode divulgar seus produtos, serviços, lojas ou qualquer projeto pessoal. Alcance mais pessoas, compartilhe sua criatividade e faça sua ideia brilhar!</p>
         <button class="btn" onclick="alert('Você clicou no botão!')">Explorar</button>
     </div>
 
@@ -268,21 +298,20 @@
         <p>Além de divulgar, você pode explorar outras criações, conhecer novos empreendimentos e se inspirar em projetos inovadores. Aqui, todos têm espaço para crescer e serem reconhecidos.</p>
     </section>
 
-
     <section id="projetos">
         <h2>Projetos</h2>
         <div class="cards">
             <div class="card">
-                <h3>Projeto 1</h3>
-                <p>Uma experiência visual imersiva com efeitos de luz e movimento.</p>
+                <h3>Produto</h3>
+                <p>Divulgue seus produtos e alcance clientes de forma rápida e prática.</p>
             </div>
             <div class="card">
-                <h3>Projeto 2</h3>
-                <p>Interface interativa que responde ao toque e ao clique do usuário.</p>
+                <h3>Serviço</h3>
+                <p>Promova seu serviço e faça com que mais pessoas conheçam seu trabalho.</p>
             </div>
             <div class="card">
-                <h3>Projeto 3</h3>
-                <p>Combinação de cores e tipografia que cria um impacto visual único.</p>
+                <h3>Loja</h3>
+                <p>Compartilhe sua loja ou negócio e aumente sua visibilidade no mercado.</p>
             </div>
         </div>
     </section>
