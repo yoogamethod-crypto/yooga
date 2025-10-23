@@ -1,275 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login e Cadastro</title>
+    <title>Sorteio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .auth-container {
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            width: 300px;
             text-align: center;
+            padding: 50px;
+            background-color: #f0f0f0;
         }
-        .auth-container h2 {
-            margin-bottom: 20px;
-            color: #ff9800;
-        }
-        .auth-container input {
-            width: 100%;
+        input, textarea, button {
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #333;
-            border-radius: 4px;
-            background-color: #2a2a2a;
-            color: #fff;
-            box-sizing: border-box;
-        }
-        .auth-container input::placeholder {
-            color: #888;
-        }
-        .auth-container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #ff9800;
-            border: none;
-            border-radius: 4px;
-            color: #000;
+            width: 300px;
             font-size: 16px;
+        }
+        button {
             cursor: pointer;
         }
-        .auth-container button:hover {
-            background-color: #e68900;
-        }
-        .auth-container .error {
-            color: #ff4d4d;
-            font-size: 14px;
-            margin-top: 10px;
-            display: none;
-        }
-        .auth-container .toggle-link {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #fff;
-        }
-        .auth-container .toggle-link a {
-            color: #ff9800;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .auth-container .toggle-link a:hover {
-            text-decoration: underline;
-        }
-        .dashboard {
-            width: 100%;
-            padding: 20px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-        .dashboard h1 {
-            color: #ff9800;
+        #resultado {
             font-size: 24px;
-            margin: 0;
-        }
-        .hidden {
-            display: none;
+            color: green;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="auth-container" id="auth-container">
-        <!-- Formulário de Login -->
-        <div id="login-form">
-            <h2>Login</h2>
-            <div id="login-error" class="error">Usuário ou senha inválidos!</div>
-            <input type="text" id="login-username" placeholder="Usuário" required>
-            <input type="password" id="login-password" placeholder="Senha" required>
-            <button onclick="login()">Entrar</button>
-            <div class="toggle-link">
-                Não tem uma conta? <a href="https://www.roblox.com/share?code=da8a97c06e510046ad37e9a9445a2e3b&type=Server" target="_blank">Cadastre-se</a>
-            </div>
-        </div>
+    <h1>Sorteio</h1>
+    <p>Digite os nomes separados por vírgula:</p>
+    <textarea id="nomes" rows="5" placeholder="Ex: João, Maria, Pedro"></textarea><br>
+    <button onclick="sortear()">Sortear</button>
 
-        <!-- Formulário de Cadastro -->
-        <div id="register-form" class="hidden">
-            <h2>Cadastro</h2>
-            <div id="register-error" class="error">Por favor, preencha todos os campos corretamente!</div>
-            <input type="text" id="register-username" placeholder="Usuário" required>
-            <input type="email" id="register-email" placeholder="E-mail" required>
-            <input type="password" id="register-password" placeholder="Senha" required>
-            <input type="password" id="register-confirm-password" placeholder="Confirmar Senha" required>
-            <button onclick="register()">Cadastrar</button>
-            <div class="toggle-link">
-                Já tem uma conta? <a onclick="showLogin()">Faça login</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Tela de Dashboard -->
-    <div class="dashboard hidden" id="dashboard">
-        <h1>YOOGA SCRIPT</h1>
-    </div>
+    <div id="resultado"></div>
 
     <script>
-        // Função para exibir o formulário de login
-        function showLogin() {
-            document.getElementById('login-form').classList.remove('hidden');
-            document.getElementById('register-form').classList.add('hidden');
-            document.getElementById('dashboard').classList.add('hidden');
-            document.getElementById('auth-container').classList.remove('hidden');
-            document.getElementById('login-error').style.display = 'none';
-            document.getElementById('login-username').value = '';
-            document.getElementById('login-password').value = '';
-        }
-
-        // Função para exibir o formulário de cadastro
-        function showRegister() {
-            document.getElementById('register-form').classList.remove('hidden');
-            document.getElementById('login-form').classList.add('hidden');
-            document.getElementById('dashboard').classList.add('hidden');
-            document.getElementById('auth-container').classList.remove('hidden');
-            document.getElementById('register-error').style.display = 'none';
-            document.getElementById('register-username').value = '';
-            document.getElementById('register-email').value = '';
-            document.getElementById('register-password').value = '';
-            document.getElementById('register-confirm-password').value = '';
-        }
-
-        // Função para exibir o dashboard
-        function showDashboard() {
-            document.getElementById('auth-container').classList.add('hidden');
-            document.getElementById('dashboard').classList.remove('hidden');
-        }
-
-        // Função para obter os usuários do localStorage
-        function getUsers() {
-            const users = localStorage.getItem('users');
-            return users ? JSON.parse(users) : {};
-        }
-
-        // Função para salvar os usuários no localStorage
-        function saveUsers(users) {
-            localStorage.setItem('users', JSON.stringify(users));
-        }
-
-        // Função para verificar se o e-mail já está em uso
-        function isEmailUsed(email) {
-            const users = getUsers();
-            return Object.values(users).some(user => user.email.toLowerCase() === email.toLowerCase());
-        }
-
-        // Função para validar a senha
-        function isValidPassword(password) {
-            const minLength = password.length >= 8;
-            const hasUpperCase = /[A-Z]/.test(password);
-            const hasLowerCase = /[a-z]/.test(password);
-            const hasNumber = /[0-9]/.test(password);
-            return minLength && hasUpperCase && hasLowerCase && hasNumber;
-        }
-
-        // Função de login
-        function login() {
-            const username = document.getElementById('login-username').value.trim().toLowerCase();
-            const password = document.getElementById('login-password').value;
-            const errorMessage = document.getElementById('login-error');
-
-            const users = getUsers();
-
-            if (users[username] && users[username].password === password) {
-                errorMessage.style.display = 'none';
-                showDashboard(); // Exibe o dashboard
-            } else {
-                errorMessage.textContent = "Usuário ou senha inválidos!";
-                errorMessage.style.display = 'block';
-            }
-        }
-
-        // Função de cadastro
-        function register() {
-            const username = document.getElementById('register-username').value.trim().toLowerCase();
-            const email = document.getElementById('register-email').value.trim();
-            const password = document.getElementById('register-password').value;
-            const confirmPassword = document.getElementById('register-confirm-password').value;
-            const errorMessage = document.getElementById('register-error');
-
-            // Validação dos campos
-            if (!username || !email || !password || !confirmPassword) {
-                errorMessage.textContent = "Por favor, preencha todos os campos!";
-                errorMessage.style.display = 'block';
+        function sortear() {
+            const input = document.getElementById('nomes').value;
+            if (!input.trim()) {
+                alert('Digite pelo menos um nome!');
                 return;
             }
 
-            // Validação do e-mail
-            if (!email.includes('@')) {
-                errorMessage.textContent = "E-mail inválido!";
-                errorMessage.style.display = 'block';
+            const nomes = input.split(',').map(nome => nome.trim()).filter(nome => nome !== "");
+            if (nomes.length === 0) {
+                alert('Nenhum nome válido encontrado!');
                 return;
             }
 
-            // Validação da senha
-            if (!isValidPassword(password)) {
-                errorMessage.textContent = "A senha deve ter pelo menos 8 caracteres, 1 letra maiúscula, 1 minúscula e 1 número!";
-                errorMessage.style.display = 'block';
-                return;
-            }
+            const indice = Math.floor(Math.random() * nomes.length);
+            const vencedor = nomes[indice];
 
-            // Verifica se as senhas coincidem
-            if (password !== confirmPassword) {
-                errorMessage.textContent = "As senhas não coincidem!";
-                errorMessage.style.display = 'block';
-                return;
-            }
-
-            // Verifica se o usuário já existe
-            const users = getUsers();
-            if (users[username]) {
-                errorMessage.textContent = "Nome de usuário já existe!";
-                errorMessage.style.display = 'block';
-                return;
-            }
-
-            // Verifica se o e-mail já está em uso
-            if (isEmailUsed(email)) {
-                errorMessage.textContent = "E-mail já está em uso!";
-                errorMessage.style.display = 'block';
-                return;
-            }
-
-            // Salva o novo usuário (senha em texto plano para demo; use hash em produção)
-            users[username] = { email, password };
-            saveUsers(users);
-
-            errorMessage.style.display = 'none';
-            alert("Cadastro bem-sucedido!");
-            showLogin(); // Volta para o formulário de login após cadastro
+            document.getElementById('resultado').innerText = '🎉 Vencedor: ' + vencedor + ' 🎉';
         }
-
-        // Permitir login ao pressionar Enter
-        document.getElementById('login-password').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                login();
-            }
-        });
-
-        // Permitir cadastro ao pressionar Enter
-        document.getElementById('register-confirm-password').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                register();
-            }
-        });
     </script>
 </body>
 </html>
