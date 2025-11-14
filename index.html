@@ -1,40 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-<title>Page Title</title>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoestima – Desenvolva a confiança e o amor próprio</title>
+    <style>
+        :root {
+            --roxo-vivo: #9c27b0;
+            --roxo-claro-fundo: #e1bee7;
+            --roxo-fundo-tip: #f3e5f5;
+            --texto: #333;
+        }
+        body { margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f9f9fb; color:var(--texto); }
+        .slide { width:100%; max-width:1200px; margin:0 auto; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.08); page-break-after:always; position:relative; }
+        .header { background:var(--roxo-vivo); color:#fff; padding:40px 60px; text-align:center; }
+        .header h1 { margin:0; font-size:2.8rem; font-weight:700; }
+        .header p { margin:8px 0 0; font-size:1.2rem; opacity:.95; }
+        .content { padding:40px 60px; line-height:1.7; }
+        .content h2 { color:var(--roxo-vivo); margin-top:0; font-size:1.8rem; }
+        .content h3 { color:var(--roxo-vivo); font-size:1.4rem; margin-top:24px; }
+        .content ul, .content ol { padding-left:20px; }
+        .content li { margin-bottom:12px; }
+        .tip { background:var(--roxo-fundo-tip); border-left:4px solid var(--roxo-vivo); padding:16px; margin:20px 0; font-style:italic; }
+        .module-nav { display:flex; justify-content:center; gap:12px; margin:30px 0; flex-wrap:wrap; }
+        .module-nav span { 
+            background: var(--roxo-claro-fundo); 
+            color: var(--roxo-vivo); 
+            padding:6px 14px; 
+            border-radius:20px; 
+            font-weight:600; 
+            font-size:.9rem; 
+            text-transform: capitalize;
+        }
+        .module-nav .active { 
+            background: var(--roxo-vivo); 
+            color: #fff; 
+        }
+        .quiz { background:#f8f0fc; padding:24px; border-radius:8px; margin-top:30px; }
+        .quiz h3 { margin-top:0; color:var(--roxo-vivo); }
+        .quiz label { display:block; margin:10px 0; cursor:pointer; }
+        .quiz input[type=radio] { margin-right:8px; }
+        .footer { text-align:center; padding:20px; font-size:.8rem; color:#999; }
+        @media (max-width:768px) { 
+            .header, .content { padding:20px; } 
+            .header h1 { font-size:2rem; } 
+        }
+    </style>
+</head>
+<body>
 
-<style>
-@font-face { 
-  font-family: "Merriweather Sans";
-  src: url('MerriweatherSans-Medium.ttf') format('truetype');
-}
+<!-- ====================== SLIDE 01 - INTRO ====================== -->
+<div class="slide">
+    <div class="header">
+        <h1>Autoestima</h1>
+        <p>Desenvolva a confiança e o amor próprio</p>
+    </div>
+    <div class="content">
+        <h2>Visão geral</h2>
+        <p>Este curso foi desenvolvido para ajudar os participantes a compreenderem a importância da autoestima e a aprenderem técnicas práticas para melhorá-la. Vamos explorar conceitos fundamentais, realizar exercícios de auto-reflexão e colocar em prática estratégias que promovam um maior amor próprio e autoconfiança.</p>
+        <div class="module-nav">
+            <span>01 Autoaceitação</span>
+            <span>02 Fortalecimento</span>
+            <span>03 Relacionamentos</span>
+            <span class="active">04 Prática</span>
+            <span>05 Resumo</span>
+            <span>06 Questionário</span>
+        </div>
+    </div>
+</div>
 
-body {
-  background: #FFFFFF;
-  margin-bottom: 200px;
-}
+<!-- ====================== SLIDE 02 - FUNDAMENTOS ====================== -->
+<div class="slide">
+    <div class="header">
+        <h1>Fundamentos da Autoestima: Compreendendo a Relação entre Autoimagem e Autoaceitação</h1>
+    </div>
+    <div class="content">
+        <p><strong>A autoestima é um dos pilares fundamentais para o desenvolvimento pessoal e emocional de um indivíduo.</strong> Ela é moldada por uma série de fatores, entre eles, a autoimagem e a autoaceitação. Compreender essa relação é essencial para promover melhorias na forma como nos percebemos e, consequentemente, impactar nossa saúde emocional e mental.</p>
 
-@keyframes BackgroundGradient {
-  0%{background-position:0% 50%;}
-  50%{background-position: 100% 50% }
-  100%{background-position: 0% 50%}
+        <h2>Autoimagem</h2>
+        <p>A autoimagem refere-se à forma como uma pessoa se vê, incluindo percepções sobre sua aparência, habilidades, e até mesmo suas características pessoais e comportamentais. Essa percepção não é necessariamente exata; é influenciada por experiências passadas, feedback de outras pessoas, e padrões culturais e sociais. Uma autoimagem positiva pode ser um poderoso aliado na construção de uma autoestima saudável, proporcionando segurança e confiança.</p>
 
-}
+        <h2>Fatores que Influenciam a Autoimagem</h2>
+        <ul>
+            <li><strong>Experiências de Vida:</strong> Momentos significativos, sejam positivos ou negativos, podem impactar como nos vemos.</li>
+            <li><strong>Feedback Social:</strong> A opinião de amigos, familiares e colegas pode reforçar ou prejudicar nossa percepção.</li>
+            <li><strong>Padrões Culturais:</strong> O que a sociedade valoriza em termos de beleza, sucesso e comportamento também afeta como nos vemos.</li>
+            <li><strong>Comparação com Outros:</strong> A tendência de nos compararmos com os outros pode distorcer nossa autoimagem, muitas vezes de forma negativa.</li>
+        </ul>
 
-.VCE{
-  color: #f2f2f2;
-  background: linear-gradient(45deg, #FCE38A, #f5ad4d, #fd81b5, #f74689, #ad5af3, #8a13ef );
-  background-size: 450% 100%;
-  animation: BackgroundGradient 30s ease infinite;  
-  padding: 20px;
-  margin: 30px;
-  border-radius: 0.5rem;
-}
+        <h2>Autoaceitação</h2>
+        <p>A autoaceitação é o reconhecimento e a acomodação das nossas próprias qualidades e limitações. É um estado de estar em paz consigo mesmo, respeitando quem somos, independentemente das imperfeições. Mais do que simplesmente gostar de si mesmo, a autoaceitação envolve entender que todos somos humanos e que a busca pela perfeição pode ser uma armadilha.</p>
 
-.VCE_Title{
-  font-family: "Merriweather Sans", sans-serif;
-  font-weight: 400;
+        <h2>Como Praticar a Autoaceitação</h2>
+        <ol>
+            <li><strong>Reconhecimento das Qualidades e Defeitos:</strong> Identificar e aceitar tanto os pontos fortes quanto os fracos pode ajudar na construção de uma autoimagem realista.</li>
+            <li><strong>Diálogo Interno Positivo:</strong> Substituir a autocrítica severa por uma voz interna mais gentil e compreensiva.</li>
+            <li><strong>Definição de Limites:</strong> Aprender a dizer não e a proteger o que é importante para nós, evitando pressões externas desnecessárias.</li>
+            <li><strong>Valorização do Processo:</strong> Focar no crescimento pessoal e nas pequenas vitórias, em vez de buscar apenas resultados perfeitos.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ====================== SLIDE 03 - TÉCNICAS PRÁTICAS ====================== -->
+<div class="slide">
+    <div class="header">
+        <h1>Técnicas Práticas para Desenvolver e Fortalecer a Autoestima no Dia a Dia</h1>
+    </div>
+    <div class="content">
+
+        <h2>1. Reconhecimento das Qualidades Pessoais</h2>
+        <p>Para começar a construir a autoestima, é essencial reconhecer as próprias qualidades. Um exercício eficaz pode ser a criação de uma lista com pelo menos dez qualidades ou habilidades que você possui. Isso pode incluir atributos como empatia, inteligência, criatividade ou resiliência. Ao visualizar e refletir sobre essas características, você poderá reforçar uma autoimagem positiva.</p>
+        <div class="tip"><strong>Dica:</strong> Reserve um momento do dia para revisar essa lista e, sempre que se sentir inseguro ou duvidar de si mesmo, releia-a. Isso pode ajudar a trazer à tona sua autoconfiança.</div>
+
+        <h2>2. Prática da Autoafirmação</h2>
+        <p>Autoafirmações são declarações positivas que você repete para si mesmo. Elas ajudam a substituir pensamentos negativos por crenças mais construtivas. Algumas frases que podem ser utilizadas incluem: “Eu sou suficiente”, “Eu mereço ser feliz” e “Eu tenho potencial para alcançar meus objetivos”.</p>
+        <div class="tip"><strong>Dica:</strong> Comece o dia dizendo suas autoafirmações em frente ao espelho, preferencialmente em voz alta. Isso ajuda a internalizar essas mensagens e contribuir para uma mudança na percepção positiva sobre si mesmo.</div>
+
+        <h2>3. Definição de Metas Realistas</h2>
+        <p>Estabelecer objetivos alcançáveis é uma maneira eficaz de fortalecer a autoestima. Comece com pequenas metas diárias ou semanais que sejam específicas, mensuráveis, alcançáveis, relevantes e temporais (SMART). Ao atingir cada uma dessas metas, você experimenta um senso de realização que é vital para a sua autoestima.</p>
+        <div class="tip"><strong>Dica:</strong> Mantenha um diário para registrar suas metas e conquistas. Acompanhar seu progresso pode servir como um poderoso lembrete das suas capacidades.</div>
+
+        <h2>4. Criar uma Rede de Apoio</h2>
+        <p>O suporte social é fundamental para a manutenção da autoestima. Mantenha contato com pessoas que lhe fazem sentir bem e que oferecem apoio. Isso pode incluir amigos, familiares ou grupos de interesse. Participar de comunidades onde você se sinta valorizado pode oferecer uma importante fonte de encorajamento e positividade.</p>
+        <div class="tip"><strong>Dica:</strong> Participe de atividades sociais ou grupos que estejam alinhados com seus interesses. Isso não só ajuda a construir relacionamentos, mas também a fortalecer sua autoconfiança no convívio social.</div>
+
+        <h2>5. Autocompaixão</h2>
+        <p>Desenvolver a autocompaixão é entender que todos cometem erros e que isso faz parte do ser humano. Ao invés de ser duro consigo mesmo em momentos de falha, pratique a autocompaixão. Pergunte-se como você trataria um amigo em uma situação semelhante e tente aplicar esse mesmo carinho e compreensão a si mesmo.</p>
+        <div class="tip"><strong>Dica:</strong> Pratique a meditação de autocompaixão, que ajuda a desenvolver essa habilidade através da reflexão e do acolhimento das próprias emoções e experiências.</div>
+
+        <h2>6. Cuidados com o Corpo e a Mente</h2>
+        <p>O autocuidado é fundamental para a autoestima. Isso inclui uma alimentação balanceada, exercícios físicos regulares e práticas de relaxamento, como meditação ou ioga. Quando você cuida do seu corpo e da sua saúde mental, a relação com si mesmo se torna mais positiva.</p>
+        <div class="tip"><strong>Dica:</strong> Destine algum tempo na sua rotina para atividades que façam você se sentir bem. Pode ser um banho relaxante, uma caminhada ao ar livre ou qualquer atividade que te traga prazer e bem-estar.</div>
+
+        <h2>7. Aprendizado Contínuo</h2>
+        <p>A educação e o aprendizado não param, e se você se comprometer a aprender coisas novas, isso pode ter um impacto significativo na sua autoestima. Seja através de cursos, leitura de livros ou até mesmo aprendendo um novo hobby, o crescimento pessoal ajuda a fortalecer a confiança nas próprias habilidades.</p>
+        <div class="tip"><strong>Dica:</strong> Escolha um assunto ou habilidade que sempre quis aprender e reserve um tempo em sua agenda para se dedicar a isso. Essa nova experiência pode ampliar sua visão de mundo e contribuir para a autoestima.</div>
+
+        <h2>8. Praticar a Gratidão</h2>
+        <p>A prática da gratidão é uma maneira poderosa de mudar a perspectiva sobre a vida e a si mesmo. Ao valorizar o que você tem e as experiências positivas que vive, pode emergir suas conquistas e qualidades de forma mais clara. O hábito de anotar coisas pelas quais você é grato diariamente pode ser muito útil.</p>
+        <div class="tip"><strong>Dica:</strong> Antes de dormir, escreva três coisas pelas quais você é grato no dia. Isso ajuda a cultivar um olhar positivo e a valorizar os aspectos bons da sua vida.</div>
+
+        <h2>9. Redução de Comparações</h2>
+        <p>Evitar comparações com os outros é uma chave importante para o fortalecimento da autoestima. Cada pessoa tem uma jornada única, e as comparações podem frequentemente levar a sentimentos de inadequação. Foque no seu próprio progresso e nas suas próprias conquistas.</p>
+        <div class="tip"><strong>Dica:</strong> Se redes sociais são uma fonte de comparação, considere limitar o tempo que passa nelas. Desconectar-se pode ajudar a cultivar uma visão mais equilibrada de si mesmo.</div>
+
+        <h2>10. Celebração das Conquistas</h2>
+        <p>Por fim, não se esqueça de celebrar suas conquistas, não importa quão pequenas elas possam parecer. Reconhecer os seus êxitos, seja cumprindo uma meta, ajudando alguém ou superando um desafio, é fundamental para reforçar sua autoestima.</p>
+        <div class="tip"><strong>Dica:</strong> Crie uma ritual de celebração, como uma pequena festa consigo mesmo ou um momento de reflexão sobre o que você alcançou. Isso pode aumentar sua motivação e autoconfiança.</div>
+
+    </div>
+</div>
+
+<!-- ====================== SLIDE 04 - IMPACTO NAS RELAÇÕES ====================== -->
+<div class="slide">
+    <div class="header">
+        <h1>Impacto da Autoestima nas Relações Pessoais e Profissionais: Construindo Conexões Saudáveis</h1>
+    </div>
+    <div class="content">
+        <p>A autoestima, que refere-se à percepção que um indivíduo tem de si mesmo, desempenha um papel crucial na qualidade e na dinâmica de suas relações pessoais e profissionais. Associada a fatores como a autoconfiança e o amor-próprio, a autoestima não apenas molda como nos vemos, mas também influencia como interagimos com os outros. Vamos explorar como a autoestima impacta nossas vidas sociais e profissionais e quais estratégias podem ser adotadas para cultivar conexões saudáveis.</p>
+
+        <h2>Relações Pessoais</h2>
+        <h3>Comunicação e Relacionamentos</h3>
+        <p>Indivíduos com alta autoestima tendem a se comunicar de forma mais aberta e honesta, o que é fundamental para o fortalecimento das relações pessoais. Quando nos valorizamos, somos menos propensos a aceitar comportamentos desrespeitosos ou tóxicos em um relacionamento. A qualidade das interações é acentuada; pessoas com autoestima elevada estão mais dispostas a expressar suas necessidades e expectativas, ouvindo ativamente as dos outros.</p>
+        <p>Por outro lado, uma autoestima baixa pode levar a padrões de comunicação disfuncionais, como a evasão de conflitos, o que pode resultar em ressentimentos e mal-entendidos. Assim, cultivar uma autoestima saudável pode facilitar o desenvolvimento de relacionamentos mais equilibrados e respeitosos.</p>
+
+        <h3>Amizades e Suporte Social</h3>
+        <p>A autoestima também influencia a forma como buscamos e mantemos amizades. Indivíduos que se veem de forma positiva tendem a atrair outras pessoas e a formar redes sociais saudáveis. A confiança em si mesmo os leva a iniciar e a manter amizades, já que esses indivíduos crescem em ambientes interativos e encorajadores.</p>
+        <p>Em contraste, aqueles que lutam com a autoestima podem hesitar em buscar conexões ou podem se cercar de pessoas que invalidam suas experiências. Essa dinâmica pode perpetuar um ciclo de solidão e isolamento. É essencial reconhecer a importância de nutrir a autoestima para cultivar raízes emocionais e sociais mais robustas.</p>
+
+        <h3>Intimidade e Parcerias</h3>
+        <p>A autoestima tem um papel significativo na capacidade de estabelecer intimidade em relacionamentos românticos. A percepção saudável de si mesmo permite que as pessoas se abram para a vulnerabilidade e se conectem de maneira mais profunda. Quando ambas as partes em um relacionamento têm autoestima adequada, há uma maior disposição para enfrentar desafios conjuntamente e priorizar o bem-estar mútuo.</p>
+        <p>Todavia, a falta de autoestima pode levar a relações dependentes ou à evitação da intimidade, causando um desgaste emocional que compromete a durabilidade do relacionamento. Para construir parcerias saudáveis, é crucial trabalhar na autoestima, promovendo um espaço onde ambos os parceiros se sintam valorizados e aceitos.</p>
+
+        <h2>Relações Profissionais</h2>
+        <h3>Interações no Local de Trabalho</h3>
+        <p>No ambiente profissional, a autoestima afeta diretamente como os indivíduos se posicionam e se comportam em suas funções. Profissionais com autoestima elevada tendem a se apropriar de suas habilidades e a se engajar mais ativamente em projetos, contribuindo de maneira mais significativa para suas equipes. Esses indivíduos estão mais propensos a inovar e a assumir riscos calculados, impactando positivamente a dinâmica da equipe.</p>
+        <p>Por outro lado, aqueles com baixa autoestima muitas vezes evitam se expor a novas oportunidades ou se sentem incapazes de contribuir, o que pode levar a um desempenho abaixo do potencial. A construção de um ambiente de trabalho que valoriza e promove a autoestima pode resultar em maior satisfação e produção.</p>
+
+        <h3>Conflitos e Resolução</h3>
+        <p>As interações no local de trabalho não estão isentas de conflitos. A autoestima desempenha um papel fundamental na maneira como os indivíduos lidam com desavenças. Profissionais com uma autoimagem positiva costumam abordar conflitos com mais resiliência, usando a comunicação eficaz para resolver desavenças, o que leva à construção de um ambiente de trabalho mais colaborativo.</p>
+        <p>Empregados com baixa autoestima, no entanto, podem retirar-se ou reagir de forma defensiva em situações de conflito, dificultando a resolução prática e eficaz de problemas. Fomentar a autoestima nos profissionais ajuda a criar uma cultura de feedback construtivo e colaboração, essencial para a saúde organizacional.</p>
+    </div>
+</div>
+
+<!-- ====================== SLIDE 05 - EXERCÍCIOS PRÁTICOS ====================== -->
+<div class="slide">
+    <div class="header">
+        <h1>Exercícios Práticos</h1>
+        <p>Vamos colocar os seus conhecimentos em prática</p>
+    </div>
+    <div class="content">
+        <p>Nesta lição, colocaremos a teoria em prática por meio de atividades práticas. Clique nos itens abaixo para conferir cada exercício e desenvolver habilidades práticas que o ajudarão a ter sucesso na disciplina.</p>
+        <div style="display:flex; flex-direction:column; gap:16px; margin-top:30px;">
+            <div style="border:1px solid #e1bee7; border-radius:8px; padding:16px; background:#faf5ff;">
+                <strong>Reflexão sobre Autoimagem</strong> <span style="float:right;">Down arrow</span>
+            </div>
+            <div style="border:1px solid #e1bee7; border-radius:8px; padding:16px; background:#faf5ff;">
+                <strong>Diário da Gratidão</strong> <span style="float:right;">Down arrow</span>
+            </div>
+            <div style="border:1px solid #e1bee7; border-radius:8px; padding:16px; background:#faf5ff;">
+                <strong>Feedback Construtivo</strong> <span style="float:right;">Down arrow</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ====================== SLIDE 06 - RESUMO ====================== -->
+<div class="slide">
+    <div class="header">
+        <h1>Resumo</h1>
+        <p>Vamos rever o que acabamos de ver até agora</p>
+    </div>
+    <div class="content">
+        <ul style="list-style:none; padding:0;">
+            <li style="margin-bottom:20px;">Checkmark Ao compreender os fundamentos da autoestima, você se equipou para fortalecer sua autoimagem e promover a autoaceitação.</li>
+            <li style="margin-bottom:20px;">Checkmark As técnicas práticas apresentadas são ferramentas valiosas para desenvolver sua autoestima diariamente, impactando positivamente sua vida.</li>
+            <li style="margin-bottom:20px;">Checkmark Ao entender o impacto da autoestima nas relações, você aprendeu a construir conexões saudáveis e a cultivar relacionamentos significativos.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ====================== SLIDE 07 - QUESTIONÁRIO ====================== -->
+<div class="slide">
+    <div class="header">
+        <h1>Questionário</h1>
+        <p>Verifique o seu conhecimento respondendo a algumas perguntas</p>
+    </div>
+    <div class="content">
+        <div class="quiz">
+            <h3>Pergunta 1/6</h3>
+            <p><strong>O que se pode fazer para melhorar a autoimagem?</strong></p>
+            <label><input type="radio" name="q1"> A. Focar apenas nas críticas que recebe.</label>
+            <label>  font-weight: 400;
   font-size: 30px;
   margin-bottom: 0;
 }
